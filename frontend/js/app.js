@@ -33,7 +33,8 @@
       const id = hash.split("/")[1];
       show("view-spot"); Spots.showDetail(id); return;
     }
-    // default : map
+    // default : map (redirige vers login si pas connecté)
+    if (!user && !API.getToken()) { location.hash = "#login"; return; }
     show("view-map");
     setTimeout(() => {
       MapView.init();
