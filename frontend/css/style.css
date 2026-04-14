@@ -29,6 +29,7 @@ main#app { height: calc(100vh - 52px); position: relative; }
 
 /* Carte */
 #view-map { display: flex; position: relative; height: 100%; }
+[hidden] { display: none !important; }
 #map { flex: 1; height: 100%; }
 
 /* Drawer */

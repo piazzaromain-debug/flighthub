@@ -8,7 +8,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git remote:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(curl -s -X POST http://localhost:8000/api/auth/login -H \"Content-Type: application/json\" -d '{\"email\":\"admin@travelhub.com\",\"password\":\"admin123\"}')",
+      "Bash(curl -s http://localhost:3000/ -o /dev/null -w \"frontend:%{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:3000/js/app.js)",
+      "Bash(curl -s http://localhost:3000/)"
     ]
   }
 }
