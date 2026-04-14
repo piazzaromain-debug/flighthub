@@ -1,0 +1,16 @@
+# user.py — Modèle User : compte utilisateur avec rôle (admin/contributeur/lecteur).
+from datetime import datetime
+from sqlalchemy import String, Integer, DateTime, func
+from sqlalchemy.orm import Mapped, mapped_column
+from ..database import Base
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
+    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    username: Mapped[str] = mapped_column(String(100), nullable=False)
+    role: Mapped[str] = mapped_column(String(20), nullable=False, default="lecteur")
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
